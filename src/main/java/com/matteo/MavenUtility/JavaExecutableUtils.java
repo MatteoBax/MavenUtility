@@ -1,4 +1,4 @@
-package com.matteo.MavenUtility.JavaExecutableUtils;
+package com.matteo.MavenUtility;
 
 import java.net.URI;
 import java.nio.file.Paths;

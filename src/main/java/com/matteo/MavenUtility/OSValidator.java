@@ -1,9 +1,9 @@
-package com.matteo.MavenUtility.OSValidator;
+package com.matteo.MavenUtility;
 
 /**
  * Classe OSValidator
  * <br>
- * Contiene i metodi per verificare che sistema operativo è in esecuzione
+ * Contiene i metodi per verificare che sistema operativo ï¿½ in esecuzione
  * 
  * @author Matteo Basso
  */
@@ -12,7 +12,7 @@ public class OSValidator {
 	
 	/**
 	 * 
-	 * @return <b>true</b> se il sistema operativo è Windows, <b>false</b> altrimenti.
+	 * @return <b>true</b> se il sistema operativo ï¿½ Windows, <b>false</b> altrimenti.
 	 */
 	public static boolean isWindows() {
         return OS.contains("win");
@@ -20,7 +20,7 @@ public class OSValidator {
 	
 	/**
 	 * 
-	 * @return <b>true</b> se il sistema operativo è macOS, <b>false</b> altrimenti.
+	 * @return <b>true</b> se il sistema operativo ï¿½ macOS, <b>false</b> altrimenti.
 	 */
     public static boolean isMacOS() {
         return OS.contains("mac");
@@ -36,7 +36,7 @@ public class OSValidator {
     
     /**
 	 * 
-	 * @return <b>true</b> se il sistema operativo è Oracle Solaris, <b>false</b> altrimenti.
+	 * @return <b>true</b> se il sistema operativo ï¿½ Oracle Solaris, <b>false</b> altrimenti.
 	 */
     public static boolean isSolaris() {
         return OS.contains("sunos");

@@ -1,4 +1,4 @@
-package com.matteo.MavenUtility.loadResourceFromClassLoader;
+package com.matteo.MavenUtility;
 
 import java.io.File;
 import java.io.FileNotFoundException;
