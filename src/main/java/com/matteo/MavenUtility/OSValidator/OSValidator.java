@@ -1,4 +1,4 @@
-package com.matteo.MavenUtilityOSValidator;
+package com.matteo.MavenUtility.OSValidator;
 
 /**
  * Classe OSValidator
