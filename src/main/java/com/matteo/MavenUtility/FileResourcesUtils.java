@@ -41,14 +41,18 @@ public class FileResourcesUtils {
                 String jarPath = parts[0].replaceFirst("file:", "");
                 String internalPath = parts[1].substring(1); // Rimuove il primo slash
 
-                JarFile jarFile = new JarFile(URLDecoder.decode(jarPath, "UTF-8"));
-                Enumeration<JarEntry> entries = jarFile.entries();
-                while (entries.hasMoreElements()) {
-                    JarEntry entry = entries.nextElement();
-                    if (entry.getName().equals(internalPath)) {   
-                        return entry.isDirectory();
-                    }
-                }
+                try (JarFile jarFile = new JarFile(URLDecoder.decode(jarPath, "UTF-8"))) {
+					Enumeration<JarEntry> entries = jarFile.entries();
+					while (entries.hasMoreElements()) {
+						JarEntry entry = entries.nextElement();
+						if (entry.getName().equals(internalPath)) {   
+							return entry.isDirectory();
+						}
+					}
+				} catch (Exception e) {
+					throw e;
+				}
+				
                 throw new FileNotFoundException("Risorsa non trovata nel JAR");
             } else {
             	throw new IOException("Il percorso non punta a un JAR.");
