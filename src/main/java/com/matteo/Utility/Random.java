@@ -1,4 +1,4 @@
-package com.matteo.MavenUtility;
+package com.matteo.Utility;
 
 public class Random {
 	public static int generateRandomInt(int min, int max) {
