@@ -10,8 +10,13 @@ public class JavaExecutableUtils {
 	 */
 	public static String getExecutableDir() {
 		try {
-			String mainClassName = System.getProperty("sun.java.command").split(" ")[0];
-			Class<?> mainClass = mainClassName.endsWith(".jar") ? JavaExecutableUtils.class : Class.forName(mainClassName);
+			String cmd = System.getProperty("sun.java.command");
+			if(cmd == null || cmd.isEmpty()) {
+				return null;
+			}
+			
+			String mainClassName = cmd.split(" ")[0];
+			Class<?> mainClass = cmd.endsWith(".jar") ? JavaExecutableUtils.class : Class.forName(mainClassName);
 			URI codePathUri = mainClass
 			        .getProtectionDomain()
 			        .getCodeSource()
